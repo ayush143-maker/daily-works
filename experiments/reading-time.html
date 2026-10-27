@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Reading Time Estimator</title>
+<style>
+:root{color-scheme:light;--bg:#f5f3ee;--ink:#20201e;--muted:#6c6b65;--line:#d8d6ce}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif}main{max-width:680px;margin:auto;padding:32px 20px}h1{font-size:clamp(2rem,7vw,3.6rem);letter-spacing:-.055em;line-height:1.05}label{display:block;font-size:.85rem;margin:20px 0 8px}textarea{width:100%;min-height:230px;padding:14px;border:1px solid var(--line);border-radius:3px;background:#fffefa;color:var(--ink);font:inherit;resize:vertical}output{display:block;border-top:1px solid var(--line);margin-top:18px;padding-top:16px;font-size:1.15rem}small{color:var(--muted)}
+</style></head>
+<body><main><small>ONE-FILE UTILITY · NO DEPENDENCIES</small><h1>Reading time.</h1><p>Paste a passage to estimate how long it might take to read. The estimate uses 220 words per minute and rounds up.</p><label for="text">Your text</label><textarea id="text" placeholder="Paste or write something here…"></textarea><output id="result" aria-live="polite">0 words · less than a minute</output><small>Actual reading speed varies with topic, language, and reading style.</small></main>
+<script>
+const field=document.querySelector('#text');const result=document.querySelector('#result');
+function update(){const text=field.value.trim();const words=text?text.split(/\s+/u).length:0;const minutes=Math.ceil(words/220);result.textContent=`${words.toLocaleString()} ${words===1?'word':'words'} · ${minutes<1?'less than a minute':`${minutes} ${minutes===1?'minute':'minutes'}`}`;}
+field.addEventListener('input',update);update();
+</script></body></html>
