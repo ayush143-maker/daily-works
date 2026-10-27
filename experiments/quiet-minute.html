@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Quiet Minute</title>
+  <style>
+    :root { color-scheme: light; font-family: Georgia, serif; background: #f5f3ed; color: #20201e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+    main { width: min(100%, 560px); border: 1px solid #d8d5cd; padding: clamp(24px, 6vw, 48px); }
+    p { line-height: 1.7; color: #55544f; }
+    h1 { font-size: clamp(2rem, 7vw, 3.5rem); font-weight: 400; letter-spacing: -.04em; margin: 12px 0; }
+    .eyebrow { font: 12px/1.4 system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+    button { border: 1px solid #242421; background: #242421; color: #f5f3ed; padding: 12px 16px; font: 14px system-ui, sans-serif; cursor: pointer; }
+    button:focus-visible { outline: 3px solid #77746c; outline-offset: 3px; }
+    #prompt { min-height: 3em; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">A small practice</div>
+    <h1>Pause before you react.</h1>
+    <p>You do not have to solve your whole life in this minute. Notice what is here, then choose the next useful step.</p>
+    <p id="prompt" aria-live="polite">What deserves your attention right now?</p>
+    <button id="reflect" type="button">Offer me a question</button>
+  </main>
+  <script>
+    const questions = [
+      "What am I avoiding because it feels uncomfortable?",
+      "What is one thing I can do without needing perfect conditions?",
+      "Which worry needs action, and which only needs patience?",
+      "Am I responding to what happened or to the story I added?",
+      "What would a kind but honest next step look like?"
+    ];
+    const prompt = document.querySelector('#prompt');
+    document.querySelector('#reflect').addEventListener('click', () => {
+      const next = questions[Math.floor(Math.random() * questions.length)];
+      prompt.textContent = next;
+    });
+  </script>
+</body>
+</html>
