@@ -24,18 +24,34 @@
     .tool span{display:block;margin-top:3px;color:var(--muted);font-size:.92rem}
   </style>
 </head>
-<body><main>
+<body>
+<main>
   <div class="eyebrow">A tiny public notebook</div>
   <h1>Daily<br>Works.</h1>
   <p>Small, useful things made consistently: little tools, experiments, notes, and ideas worth keeping.</p>
-  <section><h2>Try a tool</h2>
+  <section>
+    <h2>Try a tool</h2>
     <div class="links">
       <a class="tool" href="experiments/focus-session.html"><strong>Focus session timer</strong><span>Work in a focused block, pause when needed, and take a five-minute break.</span></a>
       <a class="tool" href="experiments/reading-time.html"><strong>Reading time estimator</strong><span>Paste text to estimate how long it may take to read.</span></a>
+      <a class="tool" href="experiments/unit-converter.html"><strong>Unit converter</strong><span>Convert length, mass, temperature, time, and volume with no dependencies.</span></a>
     </div>
   </section>
-  <section><h2>What belongs here?</h2><p>Working HTML pages, concise learning notes, lightweight utilities, and experiments with a clear purpose. Each addition should be useful on its own.</p></section>
-  <section><h2>Rule of the repository</h2><p>Quality over commit count. Prefer a working artifact and a clear explanation over empty activity or duplicate files.</p></section>
-  <section><h2>Latest update</h2><p class="stamp" id="today"></p></section>
-  <script>document.getElementById('today').textContent=new Intl.DateTimeFormat('en',{dateStyle:'long'}).format(new Date());</script>
-</main></body></html>
+  <section>
+    <h2>What belongs here?</h2>
+    <p>Working HTML pages, concise learning notes, lightweight utilities, and experiments with a clear purpose. Each addition should be useful on its own.</p>
+  </section>
+  <section>
+    <h2>Rule of the repository</h2>
+    <p>Quality over commit count. Prefer a working artifact and a clear explanation over empty activity or duplicate files.</p>
+  </section>
+  <section>
+    <h2>Latest update</h2>
+    <p class="stamp" id="today"></p>
+  </section>
+  <script>
+    document.getElementById("today").textContent = new Intl.DateTimeFormat("en", { dateStyle: "long" }).format(new Date());
+  </script>
+</main>
+</body>
+</html>
